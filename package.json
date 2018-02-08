@@ -6,16 +6,14 @@
   "scripts": {
     "lint": "eslint --fix --quiet .",
     "precommit": "npm test",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vvscode/js--ll-vocabooster.git"
   },
-  "keywords": [
-    "vocabulary",
-    "lingualeo"
-  ],
+  "keywords": ["vocabulary", "lingualeo"],
   "author": "vvscode",
   "license": "ISC",
   "bugs": {
