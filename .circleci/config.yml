@@ -38,7 +38,7 @@ jobs:
       # run tests!
       # - run: yarn test
 deployment:
-  staging:
+  production:
     branch: master
-    heroku:
-      appname: lingualeo-vocabooster
+    commands:
+      - git push https://git.heroku.com/lingualeo-vocabooster.git $CIRCLE_SHA1:refs/heads/master
