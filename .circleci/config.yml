@@ -34,11 +34,3 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-      # - run: yarn test
-deployment:
-  production:
-    branch: master
-    commands:
-      - git push https://git.heroku.com/lingualeo-vocabooster.git $CIRCLE_SHA1:refs/heads/master
