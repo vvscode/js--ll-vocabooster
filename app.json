@@ -1,0 +1,21 @@
+{
+  "name": "js--ll-vocabooster",
+  "description": "Vocabular booster for lingualeo",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
