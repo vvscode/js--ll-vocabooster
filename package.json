@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/vvscode/js--ll-vocabooster.git"
   },
-  "keywords": ["vocabulary", "lingualeo"],
+  "keywords": [
+    "vocabulary",
+    "lingualeo"
+  ],
   "author": "vvscode",
   "license": "ISC",
   "bugs": {
@@ -30,6 +33,8 @@
     "node": ">=8.7.0"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "express-form-data": "2.0.1",
+    "superagent": "3.8.2"
   }
 }

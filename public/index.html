@@ -33,19 +33,15 @@
       <legend>Boost source:</legend>
       <div class="field">
         <label>Text</label>
-        <textarea class="boost-source-text"></textarea>
+        <textarea name="text" class="boost-source-text" required></textarea>
       </div>
-      <button onclick="handleClick()" class="ui button right floated">
+      <button class="ui button right floated">
         <span class="leo-sign"></span>
         <br /> Boost
       </button>
     </fieldset>
   </form>
-  <script>
-    function handleClick() {
-      fetch('/api/hola').then(r => r.json()).then(data => alert(data.message))
-    }
-  </script>
+  <script src="/scripts/main.js"></script>
 </body>
 
 </html>
