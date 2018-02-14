@@ -1,5 +1,5 @@
 // @ts-check
-/* global document, fetch, FormData, alert */
+/* global document, fetch, FormData */
 const $$ = document.querySelector.bind(document);
 const $$form = $$("form");
 
@@ -10,5 +10,5 @@ $$form.addEventListener("submit", ev => {
     body: new FormData(ev.target)
   })
     .then(r => r.json())
-    .then(data => alert(data.words.join("\n")));
+    .then(data => ($$("#log").innerHTML = JSON.stringify(data, null, 2)));
 });
