@@ -33,6 +33,7 @@
     "node": ">=8.7.0"
   },
   "dependencies": {
+    "cors": "2.8.4",
     "express": "^4.16.2",
     "express-form-data": "2.0.1",
     "lingualeo-api": "0.0.1",

@@ -3,10 +3,13 @@ const path = require("path");
 const formData = require("express-form-data");
 const { getVocagrabberInfo } = require("./utils/vocagrabber");
 const lingualeoApi = require("lingualeo-api");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+app.use(cors());
 
 app.use(
   formData.parse({
