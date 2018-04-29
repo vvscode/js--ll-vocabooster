@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home render should render with all props 1`] = `
+<div
+  className="layout"
+>
+  <div
+    className="hero-wrapper"
+  >
+    <h4>
+      Home
+    </h4>
+    <_class
+      footer={null}
+      header={null}
+      route={Object {}}
+    />
+  </div>
+</div>
+`;

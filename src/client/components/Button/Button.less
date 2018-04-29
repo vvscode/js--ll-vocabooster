@@ -1,0 +1,35 @@
+@import '@client/styles/variables.css';
+
+.Button {
+  &__button {
+    border-radius: 5px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: var(--purple);
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    box-sizing: content-box;
+    transition: all 0.5s;
+    border: 1px solid var(--purple);
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      color: var(--purple);
+      background: white;
+    }
+
+    &:disabled {
+      background-color: var(--background-child);
+      color: var(--greyish);
+      border-color: var(--greyish);
+    }
+  }
+
+  &__button-transparent {
+    background: transparent;
+    color: var(--purple);
+  }
+}

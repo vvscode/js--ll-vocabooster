@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly for authenticated user 1`] = `
+<div
+  className="Header__root"
+>
+  <div
+    className="Header__container"
+  >
+    <Link
+      replace={false}
+      to="/"
+    >
+      Header
+    </Link>
+  </div>
+</div>
+`;

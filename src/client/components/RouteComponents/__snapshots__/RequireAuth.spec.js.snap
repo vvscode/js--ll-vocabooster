@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RequeireAuth renders redirect if user non-authenticated 1`] = `
+<Redirect
+  push={false}
+  to="/"
+/>
+`;
+
+exports[`RequeireAuth renders redirect to certain url if user non-authenticated and url passed 1`] = `
+<Redirect
+  push={false}
+  to="/some-magic-path"
+/>
+`;

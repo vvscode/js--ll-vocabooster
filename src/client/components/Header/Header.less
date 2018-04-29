@@ -1,0 +1,24 @@
+@import '@client/styles/variables.css';
+
+:root {
+  --brand-color: #61dafb;
+}
+
+.Header {
+  &__root {
+    height: var(--header-height);
+    box-shadow: 0 3px 5px 0 rgba(73, 73, 73, 0.31);
+    background-color: var(--light-background);
+    z-index: 2;
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding: 10px 0;
+    max-width: var(--max-content-width);
+  }
+
+  &__logo {
+    margin-top: -10px;
+  }
+}

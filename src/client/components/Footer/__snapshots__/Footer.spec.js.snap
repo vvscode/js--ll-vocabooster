@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<div
+  className="Footer__root"
+>
+  <Link
+    replace={false}
+    to="/"
+  >
+    Footer
+  </Link>
+</div>
+`;
