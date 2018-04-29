@@ -16,7 +16,6 @@ module.exports = {
 
   globals: {
     __DEV__: true,
-    API_SERVER_URL: true,
     CURRENT_USER: true
   },
 

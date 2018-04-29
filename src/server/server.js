@@ -30,9 +30,6 @@ app.use(bodyParser.json());
 //
 // Authentication
 // -----------------------------------------------------------------------------
-
-app.set('trust proxy', config.behindProxy || undefined);
-
 /**
  * Applciation Routes
  */
