@@ -22,13 +22,12 @@
 
 ## Options
 
-Flag        | Description
------------ | --------------------------------------------------
-`--release` | Minimizes and optimizes the compiled output
-`--verbose` | Prints detailed information to the console
-`--analyze` | Launches [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
-`--docker`  | Build an image from a Dockerfile
-`--silent`  | Do not open the default browser
+| Flag        | Description                                                                         |
+| ----------- | ----------------------------------------------------------------------------------- |
+| `--release` | Minimizes and optimizes the compiled output                                         |
+| `--verbose` | Prints detailed information to the console                                          |
+| `--analyze` | Launches [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer) |
+| `--silent`  | Do not open the default browser                                                     |
 
 For example:
 

@@ -20,9 +20,6 @@ async function copy() {
           dependencies: pkg.dependencies,
           scripts: {
             start: 'node server.js',
-            cleandb: 'node ./cleandb.js',
-            syncdb: 'node ./syncdb.js',
-            seed: 'cd sequelize && sequelize db:seed:all',
           },
         },
         null,

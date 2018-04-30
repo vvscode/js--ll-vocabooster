@@ -1,18 +1,17 @@
 {
   "name": "LingualeoVocaBooster",
+  "homepage": "https://github.com/vvscode/js--ll-vocabooster",
   "version": "0.0.0",
+  "keywords": ["lingualeo", "english", "vocabulary"],
+  "bugs": {
+    "url": "https://github.com/vvscode/js--ll-vocabooster/issues"
+  },
   "private": true,
   "engines": {
     "node": ">=6.5",
-    "npm": ">=3.10",
     "yarn": ">=1.5.1"
   },
-  "browserslist": [
-    ">1%",
-    "last 4 versions",
-    "Firefox ESR",
-    "not ie < 9"
-  ],
+  "browserslist": [">1%", "last 4 versions", "Firefox ESR", "not ie < 9"],
   "dependencies": {
     "async": "^2.6.0",
     "aws-sdk": "^2.154.0",
@@ -142,36 +141,31 @@
     "webpack-node-externals": "^1.6.0"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --ignore-path .gitignore --fix",
-      "git add"
-    ],
-    "*.{json}": [
-      "prettier --ignore-path .gitignore --write",
-      "git add"
-    ],
+    "*.{js,jsx}": ["eslint --ignore-path .gitignore --fix", "git add"],
+    "*.{json}": ["prettier --ignore-path .gitignore --write", "git add"],
     "*.{css,less,styl,scss,sass,sss}": [
       "stylelint --ignore-path .gitignore --fix",
       "git add"
     ]
   },
   "scripts": {
-    "precommit": "lint-staged",
-    "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "lint-css": "stylelint \"src/**/*.{css,less,styl,scss,sass,sss}\"",
-    "lint": "yarn run lint-js && yarn run lint-css",
-    "fix-js": "yarn run lint-js --fix",
-    "fix-css": "yarn run lint-css --fix",
-    "fix": "yarn run fix-js && yarn run fix-css",
-    "check": "flow check",
-    "test": "jest --coverage",
-    "test-watch": "yarn run test --watch --notify",
-    "test-cover": "yarn run test --coverage",
-    "bundle": "babel-node tools/run bundle",
-    "build": "babel-node tools/run build",
     "build-stats": "yarn run build --release --analyse",
-    "serve": "babel-node tools/run runServer",
+    "build": "babel-node tools/run build",
+    "bundle": "babel-node tools/run bundle",
     "dev": "concurrently --kill-others \"yarn run start\"",
-    "start": "babel-node --inspect tools/run start"
+    "fix-css": "yarn run lint-css --fix",
+    "fix-js": "yarn run lint-js --fix",
+    "fix": "yarn run fix-js && yarn run fix-css",
+    "lint-css": "stylelint \"src/**/*.{css,less,styl,scss,sass,sss}\"",
+    "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
+    "lint": "yarn run lint-js && yarn run lint-css",
+    "postinstall": "yarn run build --release",
+    "precommit": "lint-staged",
+    "serve": "babel-node tools/run runServer",
+    "start:dev": "babel-node --inspect tools/run start",
+    "start": "node build/server.js",
+    "test-cover": "yarn run test --coverage",
+    "test-watch": "yarn run test --watch --notify",
+    "test": "jest --coverage -u"
   }
 }

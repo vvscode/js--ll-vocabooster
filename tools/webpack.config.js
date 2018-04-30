@@ -502,32 +502,9 @@ const serverConfig = {
     __dirname: false,
   },
 };
-
-const syncdbConfig = {
-  ...serverConfig,
-
-  name: 'syncdb',
-  target: 'node',
-
-  entry: {
-    syncdb: ['babel-polyfill', './src/server/data/utils/sync.js'],
-  },
-};
-
-const cleanConfig = {
-  ...serverConfig,
-
-  name: 'syncdb',
-  target: 'node',
-
-  entry: {
-    cleandb: ['babel-polyfill', './src/server/data/utils/clean.js'],
-  },
-};
-
 // Only use babel-plugin-import in client side
 clientConfig.module.rules[0].options.plugins = [
   ...clientConfig.module.rules[0].options.plugins,
 ];
 
-export default [clientConfig, serverConfig, syncdbConfig, cleanConfig];
+export default [clientConfig, serverConfig];

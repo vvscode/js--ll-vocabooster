@@ -25,9 +25,5 @@ yarn-error.log*
 # Misc
 .DS_Store
 
-database.sqlite
-
 uploads
 .env
-_*
-!__snapshots__
