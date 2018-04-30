@@ -3,12 +3,5 @@
 exports[`Footer renders correctly 1`] = `
 <div
   className="Footer__root"
->
-  <Link
-    replace={false}
-    to="/"
-  >
-    Footer
-  </Link>
-</div>
+/>
 `;

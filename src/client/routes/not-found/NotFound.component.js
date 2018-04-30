@@ -6,7 +6,11 @@ import notfound from './svg/404.svg';
 
 export default class NotFound extends React.Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
+  };
+
+  static defaultProps = {
+    title: '',
   };
 
   render() {

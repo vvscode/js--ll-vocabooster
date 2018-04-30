@@ -1,0 +1,27 @@
+@import '@client/styles/variables.css';
+
+.about__container {
+  background: var(--light-background);
+  width: 100%;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.about__wrapper {
+  height: calc(100vh - var(--header-height));
+  text-align: center;
+  font-size: 30px;
+  margin-top: 100px;
+}
+
+/*
+File was generated with tamm-cli from next settings:
+{
+  "path": "about",
+  "addStyles": true,
+  "connectedToRedux": "No",
+  "componentName": "about",
+  "camelizedComponentName": "About",
+  "withRedux": false
+}
+*/

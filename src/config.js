@@ -8,5 +8,5 @@ if (env.BROWSER) {
 
 module.exports = {
   // Node.js app
-  port: process.env.PORT || 3451,
+  port: process.env.PORT || 3000,
 };

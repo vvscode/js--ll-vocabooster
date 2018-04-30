@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout renders children correctly 1`] = `
-<div
-  className="Layout__appWrapper"
->
-  <Header />
+<Container>
+  <Header>
+    <withRouter(Header) />
+  </Header>
   <div
     className="Layout__layoutContent"
   >
@@ -13,5 +13,5 @@ exports[`Layout renders children correctly 1`] = `
     />
   </div>
   <Footer />
-</div>
+</Container>
 `;

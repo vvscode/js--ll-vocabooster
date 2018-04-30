@@ -33,9 +33,6 @@ app.use(bodyParser.json());
 /**
  * Applciation Routes
  */
-app.get('/', (req, res) => {
-  res.redirect('/home');
-});
 
 app.get(['/home'], (req, res, next) => {
   next();
@@ -51,9 +48,11 @@ app.use('/pub', publicApi);
 // page initial rendering
 app.get('*', initialRender);
 
-app.listen(config.port, () => {
-  console.info(`The server is running at https://localhost:${config.port}/`);
-});
+if (!module.hot) {
+  app.listen(config.port, () => {
+    console.info(`The server is running at https://localhost:${config.port}/`);
+  });
+}
 
 //
 // Hot Module Replacement

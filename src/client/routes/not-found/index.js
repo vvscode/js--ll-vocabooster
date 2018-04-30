@@ -8,5 +8,4 @@ const title = 'Error - 404';
 export default () => ({
   title,
   component: props => <NotFound title={title} {...props} />,
-  status: 404,
 });

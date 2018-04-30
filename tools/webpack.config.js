@@ -66,6 +66,7 @@ const config = {
       {
         test: reScript,
         include: [SRC_DIR, `${ROOT_DIR}/tools`],
+        exclude: ['**/*.spec.js', '**/*.test.js'],
         loader: 'babel-loader',
         options: {
           // https://github.com/babel/babel-loader#options
@@ -108,6 +109,10 @@ const config = {
             // Remove unnecessary React propTypes from the production build
             // https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types
             ...(isDebug ? ['transform-react-remove-prop-types'] : []),
+            // next lines should disable chunks
+            // https://gist.github.com/jcenturion/892c718abce234243a156255f8f52468
+            'dynamic-import-webpack',
+            'remove-webpack',
           ],
         },
       },
@@ -120,6 +125,7 @@ const config = {
           {
             exclude: SRC_DIR,
             loader: 'css-loader',
+            include: [/node_modules\/semantic-ui-css/],
             options: {
               sourceMap: isDebug,
               minimize: isDebug ? false : minimizeCssOptions,

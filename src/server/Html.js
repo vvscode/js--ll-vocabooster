@@ -5,7 +5,7 @@ import serialize from 'serialize-javascript';
 
 class Html extends React.Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     description: PropTypes.string.isRequired,
     styles: PropTypes.arrayOf(
       PropTypes.shape({
@@ -19,6 +19,7 @@ class Html extends React.Component {
   };
 
   static defaultProps = {
+    title: 'Lingualeo VocaBooster',
     styles: [],
     scripts: [],
     children: null,
@@ -41,6 +42,12 @@ class Html extends React.Component {
           <link rel="apple-touch-icon" href="apple-touch-icon.png" />
           {/* Put thirdparty styles/scripts below  */}
           {/* <link rel="stylesheet" href="/thirdparty/..." /> */}
+          {/* todo: find out why `import 'semantic-ui-css/semantic.min.css';` doesn't work */}
+          <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+          />
+
           {/* eslint-disable react/no-danger */}
           {styles.map(style => (
             <style
