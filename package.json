@@ -1,7 +1,7 @@
 {
   "name": "LingualeoVocaBooster",
   "homepage": "https://github.com/vvscode/js--ll-vocabooster",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "keywords": ["lingualeo", "english", "vocabulary"],
   "bugs": {
     "url": "https://github.com/vvscode/js--ll-vocabooster/issues"
