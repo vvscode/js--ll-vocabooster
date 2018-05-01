@@ -25,14 +25,3 @@ export default class AboutComponent extends React.Component {
     );
   }
 }
-/*
-File was generated with tamm-cli from next settings:
-{
-  "path": "about",
-  "addStyles": true,
-  "connectedToRedux": "No",
-  "componentName": "about",
-  "camelizedComponentName": "About",
-  "withRedux": false
-}
-*/

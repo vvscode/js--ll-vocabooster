@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Segment } from 'semantic-ui-react';
 
+import CredentialsForm from 'client/components/CredentialsForm';
+import TextSourceForm from 'client/components/TextSourceForm';
+import TableOfWords from 'client/components/TableOfWords';
 import { SubRoutesWrapper } from 'client/components/RouteComponents';
 
 export default class HomeComponent extends React.Component {
@@ -17,6 +21,16 @@ export default class HomeComponent extends React.Component {
       <div className="layout">
         <div className="hero-wrapper">
           <h4>{title}</h4>
+          <Segment>
+            <CredentialsForm />
+          </Segment>
+          <Segment>
+            <TextSourceForm />
+          </Segment>
+          <Segment>
+            <TableOfWords />
+          </Segment>
+
           <SubRoutesWrapper route={this.props.route} />
         </div>
       </div>

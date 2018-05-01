@@ -1,16 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Component from './About.component';
+import Component from './TextSourceForm';
 
-describe('About', () => {
+describe('TextSourceForm', () => {
   let props;
   let getShallowComponent;
 
   beforeEach(() => {
-    props = {
-      actions: {},
-      route: {},
-    };
+    props = {};
 
     getShallowComponent = () => shallow(<Component {...props} />);
   });

@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableOfWords render should render with all props 1`] = `
+<React.Fragment>
+  <Table
+    as="table"
+    celled={true}
+    padded={true}
+  >
+    <TableHeader
+      as="thead"
+    >
+      <TableRow
+        as="tr"
+        cellAs="td"
+      >
+        <TableHeaderCell
+          as="th"
+        >
+          Selected to Add
+        </TableHeaderCell>
+        <TableHeaderCell
+          as="th"
+        >
+          Word
+        </TableHeaderCell>
+        <TableHeaderCell
+          as="th"
+        >
+          Translation
+        </TableHeaderCell>
+        <TableHeaderCell
+          as="th"
+        >
+          Frequency
+        </TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody
+      as="tbody"
+    >
+      <TableRow
+        as="tr"
+        cellAs="td"
+      >
+        <TableCell
+          as="td"
+          collapsing={true}
+        >
+          <Checkbox
+            checked={true}
+            name="selected"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </TableCell>
+        <TableCell
+          as="td"
+        >
+          table
+        </TableCell>
+        <TableCell
+          as="td"
+        >
+          <Input
+            fluid={true}
+            name="translation"
+            onChange={[Function]}
+            type="text"
+            value="стол"
+          />
+        </TableCell>
+        <TableCell
+          as="td"
+          collapsing={true}
+          textAlign="right"
+        >
+          54
+        </TableCell>
+      </TableRow>
+      <TableRow
+        as="tr"
+        cellAs="td"
+      >
+        <TableCell
+          as="td"
+          collapsing={true}
+        >
+          <Checkbox
+            checked={true}
+            name="selected"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </TableCell>
+        <TableCell
+          as="td"
+        >
+          tree
+        </TableCell>
+        <TableCell
+          as="td"
+        >
+          <Input
+            fluid={true}
+            name="translation"
+            onChange={[Function]}
+            type="text"
+            value="дерево"
+          />
+        </TableCell>
+        <TableCell
+          as="td"
+          collapsing={true}
+          textAlign="right"
+        >
+          54
+        </TableCell>
+      </TableRow>
+      <TableRow
+        as="tr"
+        cellAs="td"
+      >
+        <TableCell
+          as="td"
+          collapsing={true}
+        >
+          <Checkbox
+            checked={true}
+            name="selected"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </TableCell>
+        <TableCell
+          as="td"
+        >
+          chair
+        </TableCell>
+        <TableCell
+          as="td"
+        >
+          <Input
+            fluid={true}
+            name="translation"
+            onChange={[Function]}
+            type="text"
+            value="стул"
+          />
+        </TableCell>
+        <TableCell
+          as="td"
+          collapsing={true}
+          textAlign="right"
+        >
+          54
+        </TableCell>
+      </TableRow>
+      <TableRow
+        as="tr"
+        cellAs="td"
+      >
+        <TableCell
+          as="td"
+          collapsing={true}
+        >
+          <Checkbox
+            checked={true}
+            name="selected"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </TableCell>
+        <TableCell
+          as="td"
+        >
+          house
+        </TableCell>
+        <TableCell
+          as="td"
+        >
+          <Input
+            fluid={true}
+            name="translation"
+            onChange={[Function]}
+            type="text"
+            value="дом"
+          />
+        </TableCell>
+        <TableCell
+          as="td"
+          collapsing={true}
+          textAlign="right"
+        >
+          54
+        </TableCell>
+      </TableRow>
+      <TableRow
+        as="tr"
+        cellAs="td"
+      >
+        <TableCell
+          as="td"
+          colSpan="4"
+        >
+          <pre>
+            {
+  "words": [
+    {
+      "selected": true,
+      "word": "table",
+      "translation": "стол",
+      "frequency": 54,
+      "id": 1
+    },
+    {
+      "selected": true,
+      "word": "tree",
+      "translation": "дерево",
+      "frequency": 54,
+      "id": 2
+    },
+    {
+      "selected": true,
+      "word": "chair",
+      "translation": "стул",
+      "frequency": 54,
+      "id": 3
+    },
+    {
+      "selected": true,
+      "word": "house",
+      "translation": "дом",
+      "frequency": 54,
+      "id": 14
+    }
+  ]
+}
+          </pre>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  <FormField
+    control={[Function]}
+  >
+    Submit
+  </FormField>
+</React.Fragment>
+`;

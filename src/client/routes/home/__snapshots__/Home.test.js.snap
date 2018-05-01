@@ -10,6 +10,15 @@ exports[`Home render should render with all props 1`] = `
     <h4>
       Home
     </h4>
+    <Segment>
+      <CredentialsForm />
+    </Segment>
+    <Segment>
+      <Connect(TextSourceForm) />
+    </Segment>
+    <Segment>
+      <Connect(TableOfWords) />
+    </Segment>
     <_class
       footer={null}
       header={null}
