@@ -1,29 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home render should render with all props 1`] = `
-<div
-  className="layout"
+<Grid
+  celled="internally"
 >
-  <div
-    className="hero-wrapper"
-  >
-    <h4>
-      Home
-    </h4>
-    <Segment>
-      <CredentialsForm />
-    </Segment>
-    <Segment>
-      <Connect(TextSourceForm) />
-    </Segment>
-    <Segment>
-      <Connect(TableOfWords) />
-    </Segment>
-    <_class
-      footer={null}
-      header={null}
-      route={Object {}}
-    />
-  </div>
-</div>
+  <GridRow>
+    <GridColumn
+      width={5}
+    >
+      <pre>
+        {
+  "login": "111",
+  "password": "2",
+  "text": "",
+  "words": []
+}
+      </pre>
+    </GridColumn>
+    <GridColumn
+      width={11}
+    >
+      <h4>
+        Home
+      </h4>
+      <Segment>
+        <CredentialsForm
+          login="111"
+          onSubmit={[Function]}
+          password="2"
+        />
+      </Segment>
+      <Segment>
+        <Connect(TextSourceForm)
+          onSubmit={[Function]}
+        />
+      </Segment>
+      <Segment>
+        <Connect(TableOfWords)
+          words={Array []}
+        />
+      </Segment>
+      <_class
+        footer={null}
+        header={null}
+        route={Object {}}
+      />
+       
+    </GridColumn>
+  </GridRow>
+</Grid>
 `;

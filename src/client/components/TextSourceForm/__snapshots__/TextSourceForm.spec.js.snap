@@ -3,6 +3,7 @@
 exports[`TextSourceForm render should render with all props 1`] = `
 <Form
   as="form"
+  onSubmit={[Function]}
 >
   <FormField
     control={[Function]}
@@ -16,8 +17,5 @@ exports[`TextSourceForm render should render with all props 1`] = `
   >
     Submit
   </FormField>
-  <pre>
-    {}
-  </pre>
 </Form>
 `;

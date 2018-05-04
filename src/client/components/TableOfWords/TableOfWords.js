@@ -1,38 +1,34 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { Table, Form, Input, Checkbox, Button } from 'semantic-ui-react';
 
 class TableOfWords extends Component {
+  static propTypes = {
+    /* eslint-disable react/no-unused-prop-types */
+    words: PropTypes.arrayOf(
+      PropTypes.shape({
+        selected: PropTypes.bool,
+        word: PropTypes.string,
+        translation: PropTypes.string,
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      }).isRequired,
+    ),
+    onSubmit: PropTypes.func.isRequired,
+  };
+  static defaultProps = {
+    words: [],
+  };
+  static getDerivedStateFromProps = (props, prevState) => ({
+    words: props.words,
+  });
+
   state = {
-    words: [
-      {
-        selected: true,
-        word: 'table',
-        translation: 'стол',
-        frequency: 54,
-        id: 1,
-      },
-      {
-        selected: true,
-        word: 'tree',
-        translation: 'дерево',
-        frequency: 54,
-        id: 2,
-      },
-      {
-        selected: true,
-        word: 'chair',
-        translation: 'стул',
-        frequency: 54,
-        id: 3,
-      },
-      {
-        selected: true,
-        word: 'house',
-        translation: 'дом',
-        frequency: 54,
-        id: 14,
-      },
-    ],
+    words: [],
+  };
+
+  onSubmit = ev => {
+    ev.preventDefault();
+    this.props.onSubmit({ words: this.state.words.filter(i => i.selected) });
   };
 
   getHandler = id => (ev, { name, value, checked, type }) => {
@@ -51,6 +47,10 @@ class TableOfWords extends Component {
   };
 
   render() {
+    const { words } = this.state;
+    if (!words || !words.length) {
+      return null;
+    }
     return (
       <Fragment>
         <Table celled padded>
@@ -64,7 +64,7 @@ class TableOfWords extends Component {
           </Table.Header>
 
           <Table.Body>
-            {this.state.words.map((item, index) => (
+            {words.map((item, index) => (
               <Table.Row>
                 <Table.Cell collapsing>
                   <Checkbox
@@ -87,14 +87,16 @@ class TableOfWords extends Component {
                 </Table.Cell>
               </Table.Row>
             ))}
-            <Table.Row>
+            {/* <Table.Row>
               <Table.Cell colSpan="4">
                 <pre>{JSON.stringify(this.state, null, 2)}</pre>
               </Table.Cell>
-            </Table.Row>
+            </Table.Row> */}
           </Table.Body>
         </Table>
-        <Form.Field control={Button}>Submit</Form.Field>
+        <Form.Field control={Button} onClick={this.onSubmit}>
+          Submit
+        </Form.Field>
       </Fragment>
     );
   }

@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Form, TextArea } from 'semantic-ui-react';
 
 class TextSourceForm extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
   state = {};
+
+  onSubmit = ev => {
+    ev.preventDefault();
+    const { sourceText: text } = this.state;
+    if (!text) {
+      return;
+    }
+    this.props.onSubmit({ text });
+    ev.target.reset();
+  };
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value });
 
   render() {
     return (
-      <Form>
+      <Form onSubmit={this.onSubmit}>
         <Form.Field
           control={TextArea}
           label="Source text"
@@ -17,7 +31,7 @@ class TextSourceForm extends Component {
           onChange={this.handleChange}
         />
         <Form.Field control={Button}>Submit</Form.Field>
-        <pre>{JSON.stringify(this.state, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
       </Form>
     );
   }

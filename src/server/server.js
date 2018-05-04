@@ -43,7 +43,7 @@ app.get(['/home'], (req, res, next) => {
  */
 
 // public facing api for push updates
-app.use('/pub', publicApi);
+app.use('/api', publicApi);
 
 // page initial rendering
 app.get('*', initialRender);

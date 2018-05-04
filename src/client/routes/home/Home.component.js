@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Grid } from 'semantic-ui-react';
 
 import CredentialsForm from 'client/components/CredentialsForm';
 import TextSourceForm from 'client/components/TextSourceForm';
@@ -15,25 +15,48 @@ export default class HomeComponent extends React.Component {
     }).isRequired,
   };
 
+  state = {
+    login: '111',
+    password: '2',
+    text: '',
+    words: [],
+  };
+
+  handleSourceForm = ({ text }) => this.setState({ text });
+  handleCredentialsForm = ({ login, password }) =>
+    this.setState({ login, password });
+  handleWordsForm = ({ words }) => this.setState({ words });
+
   render() {
     const title = `Home`;
     return (
-      <div className="layout">
-        <div className="hero-wrapper">
-          <h4>{title}</h4>
-          <Segment>
-            <CredentialsForm />
-          </Segment>
-          <Segment>
-            <TextSourceForm />
-          </Segment>
-          <Segment>
-            <TableOfWords />
-          </Segment>
-
-          <SubRoutesWrapper route={this.props.route} />
-        </div>
-      </div>
+      <Grid celled="internally">
+        <Grid.Row>
+          <Grid.Column width={5}>
+            <pre>{JSON.stringify(this.state, null, 2)}</pre>
+          </Grid.Column>
+          <Grid.Column width={11}>
+            <h4>{title}</h4>
+            <Segment>
+              <CredentialsForm
+                login={this.state.login}
+                password={this.state.password}
+                onSubmit={this.handleCredentialsForm}
+              />
+            </Segment>
+            <Segment>
+              <TextSourceForm onSubmit={this.handleSourceForm} />
+            </Segment>
+            <Segment>
+              <TableOfWords
+                words={this.state.words}
+                onSubmit={this.handleWordsForm}
+              />
+            </Segment>
+            <SubRoutesWrapper route={this.props.route} />{' '}
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     );
   }
 }
