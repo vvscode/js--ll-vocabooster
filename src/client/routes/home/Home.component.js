@@ -6,6 +6,7 @@ import CredentialsForm from 'client/components/CredentialsForm';
 import TextSourceForm from 'client/components/TextSourceForm';
 import TableOfWords from 'client/components/TableOfWords';
 import { SubRoutesWrapper } from 'client/components/RouteComponents';
+import { getWords } from 'client/utils/api';
 
 export default class HomeComponent extends React.Component {
   static propTypes = {
@@ -22,7 +23,12 @@ export default class HomeComponent extends React.Component {
     words: [],
   };
 
-  handleSourceForm = ({ text }) => this.setState({ text });
+  handleSourceForm = ({ text }) => {
+    this.setState({ text });
+    getWords(text).then(words =>
+      this.setState({ words: words.map(i => ({ ...i, selected: true })) }),
+    );
+  };
   handleCredentialsForm = ({ login, password }) =>
     this.setState({ login, password });
   handleWordsForm = ({ words }) => this.setState({ words });

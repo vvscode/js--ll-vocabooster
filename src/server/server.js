@@ -3,6 +3,7 @@ import express from 'express';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import formData from 'express-form-data';
 
 import config from '../config';
 import publicApi from './api/public/index';
@@ -26,6 +27,12 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(
+  formData.parse({
+    autoFiles: true,
+  }),
+);
+app.use(formData.format());
 
 //
 // Authentication

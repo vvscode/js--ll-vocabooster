@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
 router.post('/vocagrabber', (req, res) => {
   const { text } = req.body;
   let words;
+  console.log(text);
   getVocagrabberInfo(text)
     .then(data => data.result.words.map(i => i.word).sort())
     .then(extractedWords => {
@@ -21,15 +22,15 @@ router.post('/vocagrabber', (req, res) => {
       return Promise.all(words.map(word => lingualeoApi.getTranslates(word)));
     })
     .then(translates =>
-      words.reduce((acc, word, index) => {
-        acc[word] = translates[index]
+      words.map((word, index) => ({
+        word,
+        translation: translates[index]
           /* eslint-disable no-nested-ternary */
           .sort(
             (a, b) => (a.votes > b.votes ? 1 : a.votes === b.votes ? 0 : -1),
           )
-          .reverse()[0].value;
-        return acc;
-      }, {}),
+          .reverse()[0].value,
+      })),
     )
     .then(data => res.send({ data }))
     .catch(err => console.log(err));

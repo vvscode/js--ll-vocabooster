@@ -2,7 +2,11 @@
   "name": "LingualeoVocaBooster",
   "homepage": "https://github.com/vvscode/js--ll-vocabooster",
   "version": "0.0.1",
-  "keywords": ["lingualeo", "english", "vocabulary"],
+  "keywords": [
+    "lingualeo",
+    "english",
+    "vocabulary"
+  ],
   "bugs": {
     "url": "https://github.com/vvscode/js--ll-vocabooster/issues"
   },
@@ -11,7 +15,12 @@
     "node": ">=6.5",
     "yarn": ">=1.5.1"
   },
-  "browserslist": [">1%", "last 4 versions", "Firefox ESR", "not ie < 9"],
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ],
   "dependencies": {
     "async": "^2.6.0",
     "aws-sdk": "^2.154.0",
@@ -27,6 +36,7 @@
     "dotenv": "^5.0.1",
     "esri-loader": "^2.3.0",
     "express": "^4.16.2",
+    "express-form-data": "^2.0.6",
     "history": "^4.7.2",
     "less": "^3.0.2",
     "less-loader": "^4.1.0",
@@ -147,8 +157,14 @@
     "webpack-node-externals": "^1.6.0"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint --ignore-path .gitignore --fix", "git add"],
-    "*.{json}": ["prettier --ignore-path .gitignore --write", "git add"],
+    "*.{js,jsx}": [
+      "eslint --ignore-path .gitignore --fix",
+      "git add"
+    ],
+    "*.{json}": [
+      "prettier --ignore-path .gitignore --write",
+      "git add"
+    ],
     "*.{css,less,styl,scss,sass,sss}": [
       "stylelint --ignore-path .gitignore --fix",
       "git add"

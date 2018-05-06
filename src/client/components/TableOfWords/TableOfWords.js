@@ -59,7 +59,6 @@ class TableOfWords extends Component {
               <Table.HeaderCell>Selected to Add</Table.HeaderCell>
               <Table.HeaderCell>Word</Table.HeaderCell>
               <Table.HeaderCell>Translation</Table.HeaderCell>
-              <Table.HeaderCell>Frequency</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
@@ -81,9 +80,6 @@ class TableOfWords extends Component {
                     name="translation"
                     onChange={this.getHandler(item.id)}
                   />
-                </Table.Cell>
-                <Table.Cell collapsing textAlign="right">
-                  {item.frequency}
                 </Table.Cell>
               </Table.Row>
             ))}

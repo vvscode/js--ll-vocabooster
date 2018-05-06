@@ -37,6 +37,7 @@ exports[`Home render should render with all props 1`] = `
       </Segment>
       <Segment>
         <Connect(TableOfWords)
+          onSubmit={[Function]}
           words={Array []}
         />
       </Segment>
