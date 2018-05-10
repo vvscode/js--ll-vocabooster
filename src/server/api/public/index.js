@@ -6,6 +6,12 @@ const lingualeoApi = require('lingualeo-api');
 
 const router = express.Router();
 
+const errorHandler = (res, status = 500) => err => {
+  res.status(status);
+  res.send({ err });
+  console.error('[ERROR]', err);
+};
+
 router.get('/', (req, res) => {
   res.json({
     message: 'Public API',
@@ -33,7 +39,7 @@ router.post('/vocagrabber', (req, res) => {
       })),
     )
     .then(data => res.send({ data }))
-    .catch(err => console.log(err));
+    .catch(errorHandler(res));
 });
 
 router.post('/check-credentials', (req, res) => {
@@ -41,11 +47,7 @@ router.post('/check-credentials', (req, res) => {
   lingualeoApi
     .login(email, pass)
     .then(data => res.send({ data }))
-    .catch(err => {
-      res.status(400);
-      res.send({ err });
-      console.error('/check-credentials:', `${email}: ${pass}`, err);
-    });
+    .catch(errorHandler(res, 400));
 });
 
 router.post('/add-words', (req, res) => {
@@ -60,11 +62,7 @@ router.post('/add-words', (req, res) => {
       );
     })
     .then(data => res.send({ data }))
-    .catch(err => {
-      res.status(500);
-      res.send({ err });
-      console.error('/add-words', JSON.stringify(words), err);
-    });
+    .catch(errorHandler(res));
 });
 
 export default router;

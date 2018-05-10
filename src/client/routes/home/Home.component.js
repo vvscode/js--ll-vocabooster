@@ -28,6 +28,11 @@ export default class HomeComponent extends React.Component {
     loading: false,
   };
 
+  handleApiError = title => err => {
+    this.disableLoading();
+    console.error(`${title} error:`, err);
+  };
+
   handleSourceForm = ({ text }) => {
     this.enableLoading();
     getWords(text)
@@ -35,7 +40,8 @@ export default class HomeComponent extends React.Component {
         this.setState({ words: words.map(i => ({ ...i, selected: true })) }),
       )
       .then(() => this.disableLoading())
-      .then(() => this.nextStep());
+      .then(() => this.nextStep())
+      .catch(this.handleApiError('handleSourceForm'));
   };
 
   handleCredentialsForm = ({ login, password }) => {
@@ -45,10 +51,7 @@ export default class HomeComponent extends React.Component {
         this.setState({ login, password, loading: false });
         this.nextStep();
       })
-      .catch(err => {
-        this.disableLoading();
-        console.error('handleCredentialsForm:', err);
-      });
+      .catch(this.handleApiError('handleCredentialsForm'));
   };
 
   handleWordsForm = ({ words }) => {
@@ -62,11 +65,13 @@ export default class HomeComponent extends React.Component {
       this.state.login,
       this.state.password,
       this.state.words,
-    ).then(() => {
-      this.disableLoading();
-      this.setState({ words: [] });
-      this.nextStep();
-    });
+    )
+      .then(() => {
+        this.disableLoading();
+        this.setState({ words: [] });
+        this.nextStep();
+      })
+      .catch(this.handleApiError('handleWordsUpload'));
   };
 
   enableLoading = () => this.setState({ loading: true });
