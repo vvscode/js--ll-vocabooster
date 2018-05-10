@@ -14,4 +14,29 @@ export const getWords = text =>
       list.map((item, index) => ({ ...item, id: index })),
     );
 
-export const addWordsToLingualeoVocabulary = words => Promise.resolve();
+export const addWordsToLingualeoVocabulary = (email, pass, words) =>
+  fetch('/api/add-words', {
+    method: 'POST',
+    body: getFormdata({
+      email,
+      pass,
+      words: JSON.stringify(words),
+    }),
+  });
+
+export const checkCredentials = (email, pass) =>
+  fetch('/api/check-credentials', {
+    method: 'POST',
+    body: getFormdata({
+      email,
+      pass,
+    }),
+  })
+    .then(r => {
+      if (!r.ok) {
+        console.log('checkCredentials', r, r.ok);
+        throw Error(r.statusText);
+      }
+      return r;
+    })
+    .then(r => r.json());

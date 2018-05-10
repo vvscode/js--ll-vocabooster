@@ -1,53 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home render should render with all props 1`] = `
-<Grid
-  celled="internally"
->
-  <GridRow>
-    <GridColumn
-      width={5}
+<React.Fragment>
+  <StepGroup>
+    <Step
+      active={true}
+      completed={false}
+      disabled={false}
     >
-      <pre>
-        {
-  "login": "111",
-  "password": "2",
-  "text": "",
-  "words": []
-}
-      </pre>
-    </GridColumn>
-    <GridColumn
-      width={11}
-    >
-      <h4>
-        Home
-      </h4>
-      <Segment>
-        <CredentialsForm
-          login="111"
-          onSubmit={[Function]}
-          password="2"
-        />
-      </Segment>
-      <Segment>
-        <Connect(TextSourceForm)
-          onSubmit={[Function]}
-        />
-      </Segment>
-      <Segment>
-        <Connect(TableOfWords)
-          onSubmit={[Function]}
-          words={Array []}
-        />
-      </Segment>
-      <_class
-        footer={null}
-        header={null}
-        route={Object {}}
+      <Icon
+        as="i"
+        name="newspaper"
       />
-       
-    </GridColumn>
-  </GridRow>
-</Grid>
+      <StepContent>
+        <StepTitle>
+          Add text
+        </StepTitle>
+      </StepContent>
+    </Step>
+    <Step
+      active={false}
+      completed={false}
+      disabled={true}
+    >
+      <Icon
+        as="i"
+        name="pencil"
+      />
+      <StepContent>
+        <StepTitle>
+          Check new words
+        </StepTitle>
+      </StepContent>
+    </Step>
+    <Step
+      active={false}
+      completed={false}
+      disabled={true}
+    >
+      <Icon
+        as="i"
+        name="user circle"
+      />
+      <StepContent>
+        <StepTitle>
+          Auth
+        </StepTitle>
+      </StepContent>
+    </Step>
+    <Step
+      active={false}
+      completed={false}
+      disabled={true}
+    >
+      <Icon
+        as="i"
+        name="cloud upload"
+      />
+      <StepContent>
+        <StepTitle>
+          Save new words
+        </StepTitle>
+      </StepContent>
+    </Step>
+  </StepGroup>
+  <React.Fragment>
+    <Connect(TextSourceForm)
+      onSubmit={[Function]}
+    />
+  </React.Fragment>
+</React.Fragment>
 `;

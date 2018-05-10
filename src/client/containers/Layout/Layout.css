@@ -27,7 +27,6 @@ body {
 }
 
 .Layout__layoutContent {
-  background-color: rgba(245, 245, 245, 0.9);
   position: relative;
   flex: 1;
 }
