@@ -10,7 +10,8 @@ class TextSourceForm extends Component {
 
   onSubmit = ev => {
     ev.preventDefault();
-    const { sourceText: text } = this.state;
+    let { sourceText: text } = this.state;
+    text = text.trim();
     if (!text) {
       return;
     }

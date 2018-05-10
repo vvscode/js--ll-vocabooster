@@ -22,7 +22,7 @@ router.post('/vocagrabber', (req, res) => {
   const { text } = req.body;
   let words;
   getVocagrabberInfo(text)
-    .then(data => data.result.words.map(i => i.word).sort())
+    .then(list => list.map(i => i.word).sort())
     .then(extractedWords => {
       words = extractedWords;
       return Promise.all(words.map(word => lingualeoApi.getTranslates(word)));

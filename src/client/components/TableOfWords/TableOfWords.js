@@ -51,8 +51,13 @@ class TableOfWords extends Component {
     if (!words || !words.length) {
       return null;
     }
+    const wordsCount = words.length;
+    const selected = words.filter(i => i.selected).length;
     return (
       <Fragment>
+        <h3>
+          {selected} selected from {wordsCount}
+        </h3>
         <Table celled padded>
           <Table.Header>
             <Table.Row>
