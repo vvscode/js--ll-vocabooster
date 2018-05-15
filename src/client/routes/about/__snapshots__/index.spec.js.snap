@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`About/index action().componnet returns React.Component 1`] = `
-<AboutComponent
-  title="About"
-/>
-`;

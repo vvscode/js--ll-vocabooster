@@ -1,5 +1,0 @@
-@import '@client/styles/variables.css';
-
-.Error__root {
-  color: var(--red);
-}

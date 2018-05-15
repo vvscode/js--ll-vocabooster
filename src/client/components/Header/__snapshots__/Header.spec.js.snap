@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Header renders correctly for authenticated user 1`] = `
-<Route
-  render={[Function]}
-/>
-`;

@@ -1,9 +1,0 @@
-@import '@client/styles/variables.css';
-
-.layout {
-  background: var(--light-background);
-  width: 100%;
-  padding-bottom: 50px;
-  position: relative;
-  height: calc(100vh - 150px);
-}
